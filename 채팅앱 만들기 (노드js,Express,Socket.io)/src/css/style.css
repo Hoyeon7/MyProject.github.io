@@ -1,0 +1,130 @@
+
+
+* {
+    /*css 정상 적용 확인을 위해 모든 테그에 마진, 패딩 0으로 초기화*/
+    margin: 0;
+    padding: 0;
+}
+
+
+html, body {
+    /* 채팅 앱 전체 화면이 항상 웹페이지 전체를 차지하게 */
+    height: 100%;
+}
+
+
+.wrapper {
+/* 닉네임 영역, 채팅내용 영역, 문자 내용 입력+전송 영역  스타일 배치 */
+    height: 100%;
+    width: 100%;
+    display: flex;  /* 플렉스 기능으로 모든 영역 가로열 배치 후, */
+    flex-direction: column; /* 모든 영역 세로열 재배치 */
+    overflow: hidden;  /* 영역 밖으로 벗어난 부분은 숨김 처리함 */
+}
+
+
+/* 닉네임 영역 전체 스타일링 */
+.user-container {
+    background: #a9bdce;
+    flex: 1; /* 화면전체 세로비율로 화면크기를 차지하는 flex기능 */
+    display: flex;
+    justify-content: center;  /* 닉네임 영역을 12시 중앙에 배치 */
+    align-items: center; /* 세로 중앙으로 배치*/
+    padding: 0.5rem;
+}
+/* 닉네임 영역 label 스타일링 */
+.user-container label {
+    font-size: 14px;
+    margin-right : 1rem;
+}
+/* 닉네임 영역 input입력창 스타일링 */
+.user-container input {
+    border-radius: 3px;
+    border: none;
+    height: 100%;
+}
+
+
+/* 채팅내용 영역을 감싸는 컨테이너 스타일링 */
+.display-container {
+    /* 닉네임 영역 대비 세로비율 1:12로
+        채팅내용 영역이 더 많은 부분 차지 */
+    flex: 12; 
+    background: #b2c7d9;
+    overflow-y: scroll; /* 문자가 정해진 세로 영역을 벋어날 경우 스크롤 생성 */
+}
+
+
+/* 문자내용 입력 및 메시지 전송 영역 스타일링 */
+.input-container {
+    /* 닉네임 영역, 채팅내용 영역, 채팅입력/전송 영역의 화면 세로비율을
+        각각 1:12:2 로 구분 */
+    flex: 2;
+
+    /* 문자입력창 중앙 배치를 위해 설정 */
+    display:flex;
+    justify-content: stretch;
+    align-items: stretch;
+}
+/* 문자내용 입력 및 메시지 전송영역 span 부분 스타일링 */
+.input-container span {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center; /* 문자 입력창을 화면 중앙으로 */
+    padding: 0.3rem;
+}
+/* 문자내용 입력창 스타일링 */
+.chatting-input {
+    font-size: 12px;
+    height: 100%;  /*지정된 컨테이너 영역의 전체부분을 차지하게 */
+    flex: 8;
+    border: none;  /* 입력창의 테두리선 제거 */
+}
+/* 메시지 전송버튼 스타일링 */
+.send-button {
+    flex: 1;
+    background: #ffeb33;
+    border: none;
+    height: 100%; /*지정된 컨테이너 영역의 전체부분을 차지하게 */
+    border-radius: 3px;
+}
+
+
+/* 출력되는 채팅내용 스타일링 */
+.chatting-list li {
+    width: 90%;
+    padding: 0.3rem;
+    display: flex;  /* 각 채팅내용 flex 정렬 */
+    justify-content: flex-start; /* 채팅 시작시 왼쪽부터 출력되게 */
+    align-items: flex-end; /*채팅시간이 채팅내용칸 아랫선에 배치되어 출력되게*/
+    margin-top: 0.5rem;
+}
+
+
+/* 발신자 채팅 프로필/닉네임 스타일링 45 10 */  
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile .user {
+    font-size: 10px;
+    margin-bottom: 0.3rem;
+}
+
+.profile .image {
+    border-radius: 50%;
+    object-fit: cover;
+    width:50px;
+    height: 50px;
+}
+
+.message {
+    border-radius: 5px;
+    padding: 0.5rem;
+    font-size:12px;
+    margin: 0.5px;
+    flex: 7;
+}

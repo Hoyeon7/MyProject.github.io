@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+</head>
+<body>
+
+
+<!-- 전송 버튼과 html 버튼을 만들어서
+    프론트에서 메시지 입력후 서버로 전송하면
+    서버에서 천송을 받아서 프론트로 응답해주는 기능 구현 -->
+
+    <div class="wrapper">
+
+        <!-- 닉네임 -->
+        <div class="user-container">
+        <label>대화명</label>
+        <input type="text" id="nickname">
+        </div>
+        
+        <!-- 채팅 내용 -->
+        <div class="display-container">
+            
+            <ul class="chatting-list">
+                <li>
+                    <!-- 닉네임 이름, 프로필 사진 영역 -->
+                    <span class="profile">
+                        <span class="user">유저이름</span>
+                        <img src="https://placeimg.com/50/50/any" alt="any">
+                    </span>
+                    <!-- 메시지를 받아주고 표시해주는 span 영역 -->
+                    <span class="message">반갑습니다</span>
+
+                    <!-- 채팅 시간 표시 영역 -->
+                    <span class="time">오후 2:10</span>
+                    
+                </li>
+            </ul>
+        </div>
+
+        <!-- 문자내용 입력 및 메시지 전송버튼 -->
+        <div class="input-container">
+        <span>
+
+            <input type="text" class="chatting-input">
+            <button class="send-button">전송</button>
+
+        </span>
+        </div>
+
+    </div>
+
+
+
+
+    <!-- 라이브러리 불러오기 -->
+
+     <script src="/socket.io/socket.io.js"></script> 
+     <script src="js/chat.js"></script> 
+
+    <!-- 이렇게 해 놓아야 소캣.io 기능을 쓰면서
+        프론트 영역 자바스크립트 기능(chat.js)을 사용할 수 있음 -->
+
+
+</body>
+</html>
